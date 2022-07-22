@@ -12,7 +12,6 @@ namespace ConsoleApp1
         {
             Id = id;
             Name = name;
-          
             Age = age;
         }
         public Uchastniki(int id)
@@ -28,7 +27,7 @@ namespace ConsoleApp1
             Console.Write(text);
             return Console.ReadLine();
         }
-        int vod_age(string text)
+      public  static int vod_age(string text)
         {
             try
             {

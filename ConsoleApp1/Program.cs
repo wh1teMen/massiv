@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ConsoleApp1
 {    class Program
@@ -7,14 +8,23 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-    
-           Uchastniki[] uchastniki = new Uchastniki[3];
-           for (int i = 0; i < uchastniki.Length; i++)
+           int count = Uchastniki.vod_age("Введите кол-во участников");
+           List <Uchastniki> uchastniki = new List <Uchastniki>();
+           for (int i = 0; i <count ; i++)
             {
-                uchastniki[i] = new Uchastniki(i+1);
+                uchastniki.Add(new Uchastniki(i+1));
             }
 
+           void vyvod()
+            {
+                Console.WriteLine("Все участники: ");
+                foreach(var item in uchastniki)
+                {
+                    Console.WriteLine(item.ToString());
+                }
+            }
 
+          
             Console.WriteLine("\nВсе участники: ");
             foreach (var item in uchastniki)
             {
@@ -24,13 +34,9 @@ namespace ConsoleApp1
             switch (Console.ReadLine())
             {
                     case "1":
-                    Array.Resize(ref uchastniki, uchastniki.Length + 1);
-                    uchastniki[uchastniki.Length - 1] = new Uchastniki(uchastniki.Length); break;
+                    uchastniki.Add(new Uchastniki(uchastniki.Count)); vyvod(); break;
                     default: break;
             }     
-
-            
-
         }
     }
 }
