@@ -30,12 +30,16 @@ namespace ConsoleApp1
             {
                 Console.WriteLine(item.ToString());
             }
-            Console.WriteLine("[1] Добавить участника ");
+            Console.WriteLine("[1] Добавить участника\n[2] Удалитьт участника");
             switch (Console.ReadLine())
             {
                     case "1":
-                    uchastniki.Add(new Uchastniki(uchastniki.Count)); vyvod(); break;
+                    uchastniki.Add(new Uchastniki(uchastniki.Count+1)); vyvod(); break;
                     default: break;
+                    case "2":
+                    uchastniki.RemoveAt(Uchastniki.vod_age("")-1);
+                    vyvod(); break;
+
             }     
         }
     }
